@@ -4,6 +4,7 @@ Returns a function
 """
 from typing import Callable
 
+
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     Returns a function that multiplies its input by the given multiplier.
