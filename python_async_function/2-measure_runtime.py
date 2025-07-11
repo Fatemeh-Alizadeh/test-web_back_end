@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Measure total runtime for async execution"""
-import importlib.util
 import time
 import asyncio
+import importlib.util
 
-spec = importlib.util.spec_from_file_location("custom_name", "./1-concurrent_coroutines")
+spec = importlib.util.spec_from_file_location("custom_name", "./1-concurrent_coroutines.py")
 module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
@@ -19,3 +19,8 @@ def measure_time(n: int, max_delay: int) -> float:
     total_time = end - start
 
     return total_time / n
+
+n = 5
+max_delay = 9
+
+print(measure_time(n, max_delay))
